@@ -78,7 +78,7 @@ const ProductDetailsPage = () => {
                 </div>
 
                 {/* Product Info */}
-                <div>
+                <div style={{ padding: '2rem' ,background: '#f1f5f9', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)'}}>
                     <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{product.title}</h1>
                     <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '2rem' }}>
                         {product.price} ريال                                        <button 
