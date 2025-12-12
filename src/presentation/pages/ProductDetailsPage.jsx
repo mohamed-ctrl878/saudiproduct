@@ -81,17 +81,7 @@ const ProductDetailsPage = () => {
                 <div>
                     <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{product.title}</h1>
                     <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--primary)', marginBottom: '2rem' }}>
-                        {product.price} ريال
-                    </div>
-                    
-                    <div style={{ marginBottom: '2rem' }}>
-                        <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>الوصف</h3>
-                        <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                            {product.description}
-                        </p>
-                    </div>
-
-                    <button 
+                        {product.price} ريال                                        <button 
                         className="btn btn-primary" 
                         onClick={() => setShowOrderForm(true)}
                         style={{ padding: '1rem 2rem', fontSize: '1.1rem', gap: '0.5rem' }}
@@ -99,6 +89,30 @@ const ProductDetailsPage = () => {
                         <ShoppingCart size={24} />
                         اطلب الآن
                     </button>
+                    </div>
+
+                    
+                    <div style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>الوصف</h3>
+                        <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                            {product.description}
+                        </p>
+                    </div>
+                    
+                    <div style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>الفوائد</h3>
+                        <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                            {product.useful}
+                        </p>
+                    </div>
+                    <div style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>الاستخدام</h3>
+                        <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                            {product.usage}
+                        </p>
+                    </div>
+
+
                     
                      {product.category && (
                         <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', color: 'var(--text-muted)' }}>

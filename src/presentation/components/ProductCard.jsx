@@ -29,14 +29,14 @@ const ProductCard = ({ product, onOrder }) => {
                     <span style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary)' }}>
                         {product.price} ريال
                     </span>
-                    <button 
+                    <Link to={`/product/${product.documentId}`} 
                         className="btn btn-primary" 
                         onClick={() => onOrder(product)}
                         style={{ gap: '0.5rem' }}
                     >
                         <ShoppingCart size={18} />
                         اطلب
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

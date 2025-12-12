@@ -12,6 +12,8 @@ const ProductsPage = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [selectedProduct, setSelectedProduct] = useState(null);
 
+    const [showFilters, setShowFilters] = useState(false);
+
     const categoryFilter = searchParams.get('category');
 
     // Filter products
@@ -31,10 +33,11 @@ const ProductsPage = () => {
         } else {
             setSearchParams({ category: docId });
         }
+        setShowFilters(false); // Close filters on mobile selection
     };
 
     return (
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start' }}>
+        <div className="products-layout">
             {/* Modal Overlay for Order Form */}
             {selectedProduct && (
                 <div style={{
@@ -51,8 +54,16 @@ const ProductsPage = () => {
                 </div>
             )}
 
+            {/* Mobile Filter Toggle */}
+            <button className="filter-toggle-btn" onClick={() => setShowFilters(!showFilters)}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Filter size={20} /> تصفية المنتجات
+                </div>
+                <span>{showFilters ? '▲' : '▼'}</span>
+            </button>
+
             {/* Sidebar Filter */}
-            <aside style={{ width: '250px', flexShrink: 0, background: 'var(--surface)', padding: '1.5rem', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border)', position: 'sticky', top: '100px' }}>
+            <aside className={`products-sidebar ${showFilters ? 'open' : ''}`}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', fontWeight: 600 }}>
                     <Filter size={20} /> تصفية
                 </div>
@@ -60,7 +71,7 @@ const ProductsPage = () => {
                 <h4 style={{ marginBottom: '1rem', fontSize: '1rem' }}>القسم</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     <button 
-                        onClick={() => setSearchParams({})}
+                        onClick={() => { setSearchParams({}); setShowFilters(false); }}
                         style={{ 
                             textAlign: 'right', padding: '0.5rem', borderRadius: 'var(--radius-sm)',
                             background: !categoryFilter ? 'var(--primary)' : 'transparent',

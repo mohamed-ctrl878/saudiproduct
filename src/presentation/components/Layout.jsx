@@ -1,18 +1,16 @@
 import Navbar from './Navbar';
+import BackgroundBlobs from './BackgroundBlobs';
 
 const Layout = ({ children }) => {
     return (
-        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+            <BackgroundBlobs />
             <Navbar />
-            <main style={{ flex: 1, padding: 'var(--spacing-xl) 0' }}>
-                <div className="container">
-                    {children}
-                </div>
+            <main className="container" style={{ flex: 1, paddingBottom: 'var(--spacing-xl)', position: 'relative', zIndex: 1 }}>
+                {children}
             </main>
-            <footer style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', padding: 'var(--spacing-lg) 0', textAlign: 'center', color: 'var(--text-muted)' }}>
-                <div className="container">
-                    &copy; {new Date().getFullYear()} متجري. جميع الحقوق محفوظة.
-                </div>
+            <footer style={{ textAlign: 'center', padding: 'var(--spacing-lg)', borderTop: '1px solid var(--border)', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(10px)' }}>
+                &copy; {new Date().getFullYear()} متجر الفحل السعودي. جميع الحقوق محفوظة.
             </footer>
         </div>
     );

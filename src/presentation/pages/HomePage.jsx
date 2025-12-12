@@ -27,13 +27,13 @@ const HomePage = () => {
             {/* Hero Section */}
             <section style={{ 
                 textAlign: 'center', 
-                padding: '4rem 0', 
+                padding: '4rem 2rem', 
                 background: 'linear-gradient(to bottom right, #e0e7ff, #f0fdf4)',
                 borderRadius: 'var(--radius-lg)',
                 marginBottom: 'var(--spacing-xl)'
             }}>
                 <h1 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--text-main)' }}>
-                    مرحباً بكم في متجري
+                    مرحباً بكم في متجر الفحل السعودي
                 </h1>
                 <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
                     اكتشف مجموعتنا المميزة من المنتجات. جودة عالية وتصميم بسيط.
