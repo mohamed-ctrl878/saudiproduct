@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useProduct } from '../../controllers/useProducts';
 import { useState } from 'react';
 import OrderForm from '../components/OrderForm';
-import { ArrowRight, ShoppingCart } from 'lucide-react'; // Changed ArrowLeft to ArrowRight for RTL
+import { ArrowRight, ShoppingCart } from 'lucide-react';
 
 const ProductDetailsPage = () => {
     const { id } = useParams();
@@ -26,7 +26,7 @@ const ProductDetailsPage = () => {
             </Link>
 
             {showOrderForm && (
-                <div  style={{
+                <div style={{
                     position: 'fixed',
                     top: 0, left: 0, right: 0, bottom: 0,
                     backgroundColor: 'rgba(0,0,0,0.5)',
@@ -42,7 +42,7 @@ const ProductDetailsPage = () => {
                 </div>
             )}
 
-            <div className='product-card' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+            <div className="product-details-grid">
                 {/* Image Gallery */}
                 <div>
                      <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border)', marginBottom: '1rem' }}>
